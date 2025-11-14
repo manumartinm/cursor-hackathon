@@ -1,0 +1,25 @@
+{
+  "name": "hackathon",
+  "version": "1.0.0",
+  "description": "Proyecto Hackathon con API (Flask) y Frontend (Next.js)",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:api": "cd api && python app.py",
+    "build:frontend": "cd frontend && npm run build",
+    "install:frontend": "cd frontend && npm install"
+  },
+  "keywords": [
+    "hackathon",
+    "flask",
+    "nextjs",
+    "vercel"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^34.0.0"
+  }
+}
+
