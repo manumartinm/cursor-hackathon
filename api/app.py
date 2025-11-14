@@ -12,14 +12,14 @@ def index():
         'status': 'ok'
     }
 
-@app.get('/api/hello')
+@app.get('/hello')
 def hello(name: str = Query(default='Mundo', description='Nombre para saludar')):
     return {
         'message': f'Hola {name}!',
         'timestamp': datetime.now().isoformat()
     }
 
-@app.get('/api/health')
+@app.get('/health')
 def health():
     return {
         'status': 'healthy',
@@ -27,7 +27,9 @@ def health():
     }
 
 # Handler para Vercel
-handler = Mangum(app)
+# Mangum necesita que se le pase el app de FastAPI
+# y Vercel buscará la variable 'handler' o 'app'
+handler = Mangum(app, lifespan="off")
 
 # Para desarrollo local
 if __name__ == '__main__':
